@@ -10,10 +10,11 @@
 
 --------------------------------------------------------------------------------------------------------------------
 
-Project by: Megan Roberts
-Tech Dregree Track: Fullstack JavaScript
-Project Title: Random Quote Generator
-Project Requirements:
+## Project by: Megan Roberts
+## Tech Dregree Track: Fullstack JavaScript
+## Project Title: Random Quote Generator
+## Project Requirements:
+```
     1) Create an array of JavaScript objects to hold the data for your quotes. Name the array quotes. The quotes array should be accessible in the global scope.
     2) Each quote object in the quotes array should have the following properties:
         a. A quote property which contains a string: the text of the quote that will be displayed on the page.
@@ -38,8 +39,8 @@ Exceeds Expectations Requirements:
     1) Add more properties to the quote object. For example, a tags property could include a list of "tags" like "humor", "business", or "politics" to categorize each quote.
     2) When the quote changes, randomly change the background color of the page.
     3) Refresh the quote after a set amount of time. For example, every 30 seconds, make a new quote appear. (You can use the setInterval() or setTimeout() method to do this -- see the links in the “Additional Resources” section).
-
-Project Description:
+```
+## Project Description:
 I will be completing all requirements including the exceeding expectations requirements with my project submission. The random quote generator that I am creating will include popular video game quotes. The "author" of the quote will be the character that spoke the quote in the game, the citation property will be the name of the game, and the year property will be the release date for the game.
 For the exceeds expectations requirement, I will include the game's genre(s). 
 *Since I will have a "citation" and "year" for all of my quotes, I will add a few quotes with missing info to prove 4.c works for the project requirements. 
