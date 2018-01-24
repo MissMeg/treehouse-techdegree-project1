@@ -44,3 +44,5 @@ Exceeds Expectations Requirements:
 I will be completing all requirements including the exceeding expectations requirements with my project submission. The random quote generator that I am creating will include popular video game quotes. The "author" of the quote will be the character that spoke the quote in the game, the citation property will be the name of the game, and the year property will be the release date for the game.
 For the exceeds expectations requirement, I will include the game's genre(s). 
 *Since I will have a "citation" and "year" for all of my quotes, I will add a few quotes with missing info to prove 4.c works for the project requirements. 
+
+Project has been graded - bonus tasks: 1) Return a random quote that has not been viewed before until they have all been seen and then just return a random quote. 2) Reset timer after a click for better user experience. - Both completed. 
