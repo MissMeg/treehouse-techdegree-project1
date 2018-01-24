@@ -127,10 +127,14 @@ function printQuote () {
     } else {
         html += end;
     }
+    clearInterval(interval);
+    interval = setInterval(()=> {
+        printQuote();
+    }, 30000);
     document.getElementById('quote-box').innerHTML = html;
     document.body.style.backgroundColor = getRandomColor();
 }
 
-setInterval(()=> {
+let interval = setInterval(()=> {
     printQuote();
 }, 30000);
