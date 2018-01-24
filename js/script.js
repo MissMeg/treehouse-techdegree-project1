@@ -60,6 +60,7 @@ const quotes = [
 ];
 
 const colors = ['blue', 'green', 'orange', 'yellow', 'black', 'grey', 'purple', 'pink', 'red'];
+const usedQuotes = [];
 
 //Get a randomized quote each time the button is pushed and return the quote object.
 function getRandomQuote () {
@@ -73,10 +74,7 @@ function getRandomColor () {
     return colors[randoNumber];
 }
 
-//Print the random quote to the page.
-function printQuote () {
-    //assigning the new quote to a variable in order to access the object and print to the page
-    let chosenQuote = getRandomQuote();
+function buildQuote(chosenQuote){
     //setting the start of the html for the quote
     let html = `<p class="quote">${chosenQuote.quote}</p>
                 <p class="source"> ${chosenQuote.source}`;
@@ -85,7 +83,6 @@ function printQuote () {
     let year = `<span class="year">${chosenQuote.year}</span>`;
     let genre = `<span class="genre">${chosenQuote.genre}</span>`;
     let end = `</p>`;
-    let randoColor = Math.floor((Math.random() * 255));
     // checking to see if the quote includes a citation
     if (chosenQuote.citation != undefined) {
         html += citation;
@@ -126,6 +123,30 @@ function printQuote () {
     //the quote does not have a citation, year, or genre
     } else {
         html += end;
+    }
+    return html;
+}
+
+//Print the random quote to the page.
+function printQuote () {
+    //assigning the new quote to a variable in order to access the object and print to the page
+    let chosenQuote = getRandomQuote();
+    let html;
+    //check to see if all the quotes have been viewed - if so then print a random one
+    if ( usedQuotes.length === quotes.length) {
+        html = buildQuote(chosenQuote);
+    } else {
+        //if all of the quotes haven't been viewed yet then check to see if this quote has been viewed - if not then add it to the array and print it out
+        let currentQuote = usedQuotes.filter(quote => quote === chosenQuote);
+        if (currentQuote[0] === undefined) {
+            usedQuotes.push(chosenQuote);
+            html = buildQuote(chosenQuote);
+        //if this quote has been viewed, then need to keep generating quotes until we get one that hasn't been viewed yet
+        } else {
+            let notUsedQuotes = quotes.filter( quote => usedQuotes.indexOf(quote) === -1);
+            usedQuotes.push(notUsedQuotes[0]);
+            html = buildQuote(notUsedQuotes[0]);
+        }
     }
     clearInterval(interval);
     interval = setInterval(()=> {
